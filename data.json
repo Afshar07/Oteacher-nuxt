@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "فرانسوی",
+    "flag": "france.svg"
+  },
+  {
+    "id": 2,
+    "name": "آلمانی",
+    "flag": "german.svg"
+  },
+  {
+    "id": 3,
+    "name": "ترکی",
+    "flag": "turkey.svg"
+  },
+  {
+    "id": 4,
+    "name": "اسپانیایی",
+    "flag": "spain.svg"
+  },
+  {
+    "id": 5,
+    "name": "کره‌ای",
+    "flag": "korea.svg"
+  },
+  {
+    "id": 6,
+    "name": "ایتالیایی",
+    "flag": "italy.svg"
+  },
+  {
+    "id": 7,
+    "name": "چینی",
+    "flag": "chinese.svg"
+  },
+  {
+    "id": 8,
+    "name": "عربی",
+    "flag": "arabic.svg"
+  },
+  {
+    "id": 9,
+    "name": "ژاپنی",
+    "flag": "japan.svg"
+  },
+  {
+    "id": 10,
+    "name": "سوئدی",
+    "flag": "sweden.svg"
+  },
+  {
+    "id": 11,
+    "name": "هندی",
+    "flag": "india.svg"
+  },
+  {
+    "id": 12,
+    "name": "روسی",
+    "flag": "russia.svg"
+  },
+  {
+    "id": 13,
+    "name": "فارسی",
+    "flag": "iran.svg"
+  },
+  {
+    "id": 14,
+    "name": "هلندی",
+    "flag": "netherland.svg"
+  }
+]

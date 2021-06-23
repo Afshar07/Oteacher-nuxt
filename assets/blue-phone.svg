@@ -1,0 +1,13 @@
+<svg id="Iconly_Bulk_Calling" data-name="Iconly/Bulk/Calling" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#2aa7fe"/>
+      <stop offset="1" stop-color="#006aff"/>
+    </linearGradient>
+  </defs>
+  <g id="Calling" transform="translate(2 2)">
+    <path id="Fill_1" data-name="Fill 1" d="M1.02.015A.861.861,0,0,0,.693,1.7a3.462,3.462,0,0,1,2.744,2.75h0a.859.859,0,0,0,.841.7.933.933,0,0,0,.165-.015A.865.865,0,0,0,5.12,4.125,5.174,5.174,0,0,0,1.02.015" transform="translate(11.398 3.475)" opacity="0.4" fill="url(#linear-gradient)"/>
+    <path id="Fill_3" data-name="Fill 3" d="M.954.008A.817.817,0,0,0,.328.184.863.863,0,0,0,.762,1.718,6.912,6.912,0,0,1,6.888,7.857a.857.857,0,0,0,.851.764.8.8,0,0,0,.1-.006A.847.847,0,0,0,8.411,8.3a.856.856,0,0,0,.181-.633A8.616,8.616,0,0,0,.954.008" transform="translate(11.402 0)" opacity="0.4" fill="url(#linear-gradient)"/>
+    <path id="Fill_6" data-name="Fill 6" d="M15.6,11.9a2.211,2.211,0,0,0-1.615.424c-.465.27-1.35.984-1.856.8A11.493,11.493,0,0,1,6.04,7.2c-.186-.517.528-1.4.8-1.871a2.235,2.235,0,0,0,.422-1.62A13.176,13.176,0,0,0,5.009.592,1.858,1.858,0,0,0,3.882,0C2.433-.06.815,1.866.531,2.327-.181,3.309-.176,4.616.543,6.2,2.276,10.458,8.83,16.883,13.12,18.674a5.2,5.2,0,0,0,2.166.554,2.825,2.825,0,0,0,1.69-.528c.366-.211,2.38-1.9,2.326-3.385a1.856,1.856,0,0,0-.586-1.121A13.372,13.372,0,0,0,15.6,11.9" transform="translate(0 0.773)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

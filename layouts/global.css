@@ -1,0 +1,31 @@
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/IranYekan/eot/IRANYekanWebRegular.eot");
+  src: url("../assets/fonts/IranYekan/eot/IRANYekanWebRegular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/IranYekan/woff/IRANYekanWebRegular.woff")
+      format("woff"),
+    url("../assets/fonts/IranYekan/woff2/IRANYekanWebRegular.woff2")
+      format("woff2"),
+    url("../assets/fonts/IranYekan/ttf/IRANYekanWebRegular.ttf")
+      format("truetype");
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: "iranyekan", sans-serif !important;
+  font-weight: 100;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  box-sizing: border-box;
+  height: 100%;
+  overflow-x: hidden !important;
+}

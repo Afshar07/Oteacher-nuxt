@@ -4,9 +4,9 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "oteacher-nuxt",
+    title: "اوتیچر",
     htmlAttrs: {
-      lang: "en"
+      lang: "fa"
     },
     meta: [
       { charset: "utf-8" },

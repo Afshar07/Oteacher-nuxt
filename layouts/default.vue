@@ -12,17 +12,17 @@
 import TheHeader from "../components/TheHeader.vue";
 export default {
   components: { TheHeader },
-  // beforeMount() {
-  //   process.client.addEventListener("scroll", this.handleScroll);
-  // },
+
   beforeMount() {
     if (process.client) {
       window.addEventListener("scroll", this.handleScroll);
     }
   },
-  // unmounted() {
-  //   window.removeEventListener("scroll", this.handleScroll);
-  // },
+  beforeDestroy() {
+    if (process.client) {
+      window.removeEventListener("scroll", this.handleScroll);
+    }
+  },
   name: "App",
   components: { TheHeader },
   data() {

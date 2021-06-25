@@ -5,11 +5,11 @@
         <img :src="phoneImg" alt="blue phone" class="blue-phone" />
         <div class="header__nav--btns">
           <nuxt-link to="/register">
-            <main-button class="signup-btn" @click="redirectRegister"
-              >ثبت نام</main-button
-            >
+            <main-button class="signup-btn">ثبت نام</main-button>
           </nuxt-link>
-          <main-button class="login-btn">ورود</main-button>
+          <nuxt-link to="/login">
+            <main-button class="login-btn">ورود</main-button>
+          </nuxt-link>
         </div>
       </div>
       <div class="header__nav--right">

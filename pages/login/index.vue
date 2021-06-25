@@ -16,22 +16,21 @@
           @click="redirectHome"
         />
       </div>
-      <div>
-        <form @submit.prevent="onSubmit">
-          <label for="email">Email</label>
-          <input type="email" name="email" v-model="email" />
-          <br />
-          <label for="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            v-model="password"
-            @keydown.enter="logToken"
-          />
-          <br />
-          <button>ثبت نام</button>
-        </form>
+      <label for="email">Email</label>
+      <input type="email" name="email" v-model="email" />
+      <label for="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        v-model="password"
+        @keydown.enter="loginUser"
+      />
+      <div class="checkbox-container d-flex align-items-center my-4">
+        <p>{{ error }}</p>
       </div>
+      <button @click.prevent="onLogin">ورود</button>
+      <!-- <main-button class="signup-btn mb-5" id="sign-up-btn" @click="onLogin"
+        >ورود</main-button> -->
     </div>
   </div>
 </template>
@@ -39,32 +38,27 @@
 <script>
 import PhoneInput from "../../components/utilities/PhoneInput.vue";
 import MainButton from "../../components/utilities/MainButton.vue";
-
 export default {
   components: { PhoneInput, MainButton },
+
   data() {
     return {
       logoUrl: require("../../assets/logo-signup.png"),
       closeIcon: require("../../assets/close.svg"),
       email: "",
-      password: ""
+      password: "",
+      error: ""
     };
   },
   methods: {
     redirectHome() {
       this.$router.push("/");
     },
-    onSubmit() {
-      this.$store
-        .dispatch("auth/registerUser", {
-          email: this.email,
-          password: this.password
-        })
-        .then(() => {
-          this.$store.dispatch("auth/setTokenLocalStorage");
-          this.$router.push("/admin")
-        });
-      // .then(this.$router.push("/admin"));
+    onLogin() {
+      this.$store.dispatch("loginUser", {
+        email: this.email,
+        password: this.password
+      });
     }
   }
 };

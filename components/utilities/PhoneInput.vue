@@ -11,7 +11,6 @@
       @focusout="removeFocusClass"
       @focus="addFocusClass"
       v-model="number"
-      @input="setNumber"
     />
   </form>
 </template>
@@ -33,9 +32,10 @@ export default {
     },
     setNumber() {
       // send the number to setPhoneNumber action
-      this.$store.dispatch("setPhoneNumber", this.number);
+      this.$emit("email", this.number);
     }
-  }
+  },
+  emits: ["email"]
 };
 </script>
 <style scoped>

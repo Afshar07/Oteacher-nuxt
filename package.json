@@ -9,7 +9,13 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/auth-next": "5.0.0-1622918202.e815752",
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/firebase": "^7.6.1",
+    "cookieparser": "^0.1.0",
     "core-js": "^3.9.1",
+    "js-cookie": "^2.2.1",
+    "jwt-decode": "^3.1.2",
     "nuxt": "^2.15.3"
   },
   "devDependencies": {}

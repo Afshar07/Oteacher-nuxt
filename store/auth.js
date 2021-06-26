@@ -15,6 +15,8 @@ export const mutations = {
     if (localStorage.getItem("token") !== null) {
       const token = JSON.parse(localStorage.getItem("token"));
       state.accessToken = token;
+    } else {
+      this.$router.push("login");
     }
   },
   setTokenLocalStorage(state) {

@@ -1,10 +1,23 @@
 <template>
-  <div>
-    <h1>
-      {{ content }}
+  <div
+    class="admin-container d-flex flex-column align-items-center justify-content-center"
+  >
+    <h1 class="title text-center my-5">
+      Admin Panel
     </h1>
-    <h1 v-if="error">{{ error }}</h1>
-    <button type="button" @click="logout">Logout</button>
+    <div
+      class="data d-flex flex-column align-items-center justify-content-center my-5"
+    >
+      <h1 v-if="error">{{ error }}</h1>
+      <div v-else v-for="n in 5" :key="n" class="data-container mb-5">
+        <p class="data-content mt-3">
+          {{ content }}
+        </p>
+      </div>
+    </div>
+    <button type="button" class="logout-btn mb-5" @click="logout">
+      Logout
+    </button>
   </div>
 </template>
 
@@ -12,9 +25,12 @@
 import { mapGetters } from "vuex";
 export default {
   beforeMount() {
+    // Check if the user is authenticated or any token is available in localstorage
     if (!this.isAuthenticated && localStorage.getItem("token") == null) {
-      this.$router.push("/register");
+      // If not, redirect to login page
+      this.$router.push("/login");
     } else if (localStorage.getItem("token") !== null) {
+      // if there is, set it and send token to api
       this.$store.dispatch("auth/getToken");
       const token = this.$store.state.auth.accessToken;
       this.fetchDataFromFirebase(token);
@@ -35,6 +51,7 @@ export default {
   methods: {
     logout() {
       localStorage.removeItem("token");
+      this.$router.push("/login");
     },
     fetchDataFromFirebase(token) {
       fetch(
@@ -51,7 +68,39 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  color: red;
+.admin-container {
+  width: 100%;
+}
+.title {
+  color: #ff0000;
+}
+.data {
+  width: 100%;
+}
+.data-container {
+  border-radius: 2rem;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  width: 70%;
+  min-height: 3rem;
+  box-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.178);
+}
+.data-content {
+  font-size: 2rem;
+  color: #008000;
+  text-align: center;
+  padding: 2rem;
+}
+.logout-btn {
+  width: 30%;
+  height: 3rem;
+  border: none;
+  background-color: #c00000;
+  color: #fff;
+  font-size: 1.3rem;
+  border-radius: 1rem;
+  transition: all 0.3s;
+}
+.logout-btn:hover {
+  background-color: #8f0000;
 }
 </style>

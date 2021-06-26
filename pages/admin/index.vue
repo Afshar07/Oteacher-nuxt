@@ -42,7 +42,6 @@ export default {
       )
         .then(res => res.json())
         .then(data => {
-          console.log(data);
           return (this.content = data);
         })
         .catch(err => console.warn(err));

@@ -55,10 +55,15 @@ export default {
       this.$router.push("/");
     },
     onLogin() {
-      this.$store.dispatch("loginUser", {
-        email: this.email,
-        password: this.password
-      });
+      this.$store
+        .dispatch("auth/loginUser", {
+          email: this.email,
+          password: this.password
+        })
+        .then(() => {
+          this.$store.dispatch("auth/setTokenLocalStorage");
+          this.$router.push("/admin");
+        });
     }
   }
 };

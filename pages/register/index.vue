@@ -62,9 +62,8 @@ export default {
         })
         .then(() => {
           this.$store.dispatch("auth/setTokenLocalStorage");
-          this.$router.push("/admin")
+          this.$router.push("/admin");
         });
-      // .then(this.$router.push("/admin"));
     }
   }
 };

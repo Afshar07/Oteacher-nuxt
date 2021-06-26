@@ -45,6 +45,27 @@ export const actions = {
         );
       });
   },
+  loginUser(context, authData) {
+    return fetch(
+      "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCruPS7a6p-Ws7WMrLOm0iGjrkFpwWGXDQ",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: authData.email,
+          password: authData.password,
+          returnSecureToken: true
+        })
+      }
+    )
+      .then(result => result.json())
+      .then(res => {
+        return (
+          context.commit("setTokenState", res.idToken),
+          context.commit("setRefreshTokenState", res.refreshToken)
+        );
+      });
+  },
   setTokenLocalStorage(context) {
     context.commit("setRefreshTokenLocalStorage");
     context.commit("setTokenLocalStorage");

@@ -5,7 +5,9 @@
     <h1 class="title text-center my-5">
       Admin Panel
     </h1>
+    <div class="lds-dual-ring my-5" v-if="!isDataLoaded"></div>
     <div
+      v-else
       class="data d-flex flex-column align-items-center justify-content-center my-5"
     >
       <h1 v-if="error">{{ error }}</h1>
@@ -42,7 +44,8 @@ export default {
       loggedIn: false,
       content: "",
       token: null,
-      error: ""
+      error: "",
+      isDataLoaded: false
     };
   },
   computed: {
@@ -61,6 +64,7 @@ export default {
       )
         .then(res => res.json())
         .then(data => {
+          this.isDataLoaded = true;
           return (this.content = data);
         })
         .catch(err => console.warn(err));
@@ -104,5 +108,31 @@ export default {
 }
 .logout-btn:hover {
   background-color: #8f0000;
+}
+
+/* Spinner styles */
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #06b400;
+  border-color: #06b400 transparent #06b400 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>

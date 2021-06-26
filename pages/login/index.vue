@@ -65,6 +65,8 @@ export default {
       this.$router.push("/");
     },
     onLogin() {
+      // Send the user credentials to api and if authenticated,
+      // and if req was a success, put the token in local storage
       this.$store
         .dispatch("auth/loginUser", {
           email: this.email,

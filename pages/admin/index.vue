@@ -49,11 +49,13 @@ export default {
     ...mapGetters("auth", ["isAuthenticated"])
   },
   methods: {
+    // Remove the auth token from ls and redirect user to login page
     logout() {
       localStorage.removeItem("token");
       this.$router.push("/login");
     },
     fetchDataFromFirebase(token) {
+      // Send a req to api with user token and render it on page if req was a success
       fetch(
         `https://oteacher-login-default-rtdb.asia-southeast1.firebasedatabase.app/auth/-McxKeFASLp0ZWWIhQDR/content.json?auth=${token}`
       )

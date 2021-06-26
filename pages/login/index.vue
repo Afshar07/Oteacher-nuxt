@@ -18,7 +18,7 @@
       </div>
       <div class="w-100 d-flex justify-content-center">
         <form
-          @submit.prevent="onSubmit"
+          @submit.prevent="onLogin"
           class="register-form d-flex flex-column align-items-center w-75"
         >
           <label for="email" class="email-label" ref="emailLabel">Email</label>

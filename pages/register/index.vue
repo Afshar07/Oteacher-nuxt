@@ -43,7 +43,7 @@
             @focusout="passwordRemoveFocus"
           />
           <br />
-          <button class="align-self-center">ثبت نام</button>
+          <button class="sign-up-btn align-self-center mb-5">ثبت نام</button>
         </form>
       </div>
     </div>
@@ -51,10 +51,7 @@
 </template>
 
 <script>
-import MainButton from "../../components/utilities/MainButton.vue";
-
 export default {
-  components: { MainButton },
   data() {
     return {
       logoUrl: require("../../assets/logo-signup.png"),
@@ -85,6 +82,7 @@ export default {
       this.$refs.emailLabel.classList.add("email-focused");
     },
     emailRemoveFocus() {
+      // Check the email field and if it's not empty don't remove the class
       if (this.email == "") {
         this.$refs.emailLabel.classList.remove("email-focused");
       }
@@ -93,6 +91,7 @@ export default {
       this.$refs.passwordLabel.classList.add("password-focused");
     },
     passwordRemoveFocus() {
+      // Check the password field and if it's not empty don't remove the class
       if (this.password == "") {
         this.$refs.passwordLabel.classList.remove("password-focused");
       }
@@ -137,7 +136,10 @@ input {
 .password-input {
   width: 100%;
   height: 3rem;
+  padding: 0.7rem;
   margin-bottom: 1.5rem;
+  border-radius: 0.8rem;
+  border: 1px solid #37d7ff;
 }
 .password-label {
   position: absolute;
@@ -147,8 +149,23 @@ input {
 }
 .email-focused {
   top: -2rem;
+  color: #66a6ff;
 }
 .password-focused {
   top: 4rem;
+  color: #66a6ff;
+}
+.sign-up-btn {
+  width: 50%;
+  height: 3rem;
+  border: none;
+  background-color: #378aff;
+  color: #fff;
+  font-size: 1.3rem;
+  border-radius: 1rem;
+  transition: all 0.3s;
+}
+.sign-up-btn:hover {
+  background-color: #0e71fc;
 }
 </style>
